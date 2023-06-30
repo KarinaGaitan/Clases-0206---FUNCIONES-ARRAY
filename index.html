@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perro_Auto</title>
+</head>
+<body>
+    <script>
+        const auto = {
+            ruedas: 4,
+            puertas: 2,
+            color: 'gris',
+        };
+
+        const perro = {
+            name: 'Danko',
+            age: 8,
+            color: 'dorado',
+            especial: () => {
+                return 'Guaf guaf';
+            }
+        };
+
+        console.log(perro);
+        console.log(perro.age);
+        console.log(perro['age']);
+        console.log(perro.especial());
+        /*Para que aparezca el guaf guaf dentro de la función flecha*/
+        console.log(auto.puertas);
+        console.log(auto ['color']);
+
+
+    </script>
+</body>
+</html>

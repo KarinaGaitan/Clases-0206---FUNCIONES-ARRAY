@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funciones Array</title>
+</head>
+
+<body>
+    <script>
+        const nameList = ['Karina', 38, true, 'Vanessa', 'Benjamín', 'Olivia'];
+        /*cuantos elementos hay*/
+        console.log(nameList.length);
+        /*para agregar al final de la lista*/
+        console.log(nameList.push('Rafael'));
+        console.log(nameList);
+        /*para agregar al inicio de la lista*/
+        console.log(nameList.unshift('Nieves'));
+        console.log(nameList);
+        /*elimina el último elemento*/
+        console.log(nameList.pop());
+        console.log(nameList);
+        /*elimina el primer elemento*/
+        console.log(nameList.shift());
+        console.log(nameList);
+        /*para agregar elementos en determinada número de posición*/
+        /*La posición en la que quiero agregar, cuantos elementos quiero eliminar, los nombres que quiero agregar*/
+        console.log(nameList.splice(3, 0, 'Alejandra', 'Alfonso'));
+        console.log(nameList);
+        console.log(nameList.splice(3, 2));
+        console.log(nameList);
+        /*para considerar algunos elementos de la lista*/
+        console.log(nameList.splice(3, 0, 'Alejandra', 'Alfonso'));
+        console.log(nameList);
+        console.log(nameList.slice(0, 3));
+        console.log(nameList);
+        console.log(nameList.slice(3, 6));
+        console.log(nameList);
+
+        const task = ['Despertar', 'Programar', 'Comer', 'Estofar', 'Tonear', 'Dormir'];
+        /*Se considera desde que elemento quiero considerar hasta donde quiero -1 (nunca considera el último))*/
+        const newArray = task.slice(1, 4);
+        console.log(newArray);
+        console.log(task);
+
+        const programingLanguages = ['HTML', 'CSS', 'Javascript', 'Phyton', 'Java', 'C++', 'PHP', 'CSS'];
+        console.log(programingLanguages);
+        /*indexof busca desde el inicio de la lista*/
+        /*en caso no existiera el elemento figura como -1*/
+        console.log(programingLanguages.indexOf('CSS'));
+        console.log(programingLanguages.indexOf('Go'));
+        /*lastindexoff busca desde el final de la lista*/
+        console.log(programingLanguages.lastIndexOf('CSS'));
+        console.log(programingLanguages.includes('Go'));
+        /*para buscar una palabra dentro de un párrafo*/
+        console.log('No somos libres de las cosas malas que nos pasan, pero si somos libres de responder ante ellas' .search('libres'));
+        console.log(programingLanguages[2].search('Java'));
+
+        const ages = [101, 200, 18, 27, 24, 26, 19, 26];
+        console.log(ages);
+        console.log(ages.find(element => element > 25));
+        /*ubica la primera posición del elemento que sea mayor de 25*/
+        console.log(ages.findIndex(element => element > 25));
+        /*ubica el primer elemento que sea mayor de 25*/
+        console.log(ages.some(element => element < 25));
+        console.log(ages.some(element => element > 17));
+        console.log(ages.every(element => element >= 18));
+        console.log(ages.includes(27));
+        console.log(ages.includes(15));
+
+        /*función muy usada*/
+        console.log(nameList.join(' '));
+        console.log(nameList.join(', '));
+        console.log(nameList.join(' - '));
+
+        /*para ordenar edades de menor a mayor*/
+        console.log(ages.sort((a, b) => a-b));
+        console.log(ages);
+
+        /*para ordenar alfabéticamente una lista de texto*/
+        console.log(programingLanguages.sort());
+
+        /*para ordenar al reves el array*/
+        console.log(nameList.reverse());
+        console.log(nameList);
+    </script>
+</body>
+
+</html>
