@@ -1,21 +1,36 @@
 <!DOCTYPE html>
-<html lang="es" >
+<html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM</title>
 
 </head>
+
 <body>
     <h1 class="title" id="titleHomepage">Promedio feliz</h1>
-    <ul class="list" id="networkList">
+    <!--<ul class="list" id="networkList">
         <li>Facebook</li>
     </ul>
     <ul class="list" id="linksList">
         <li>
             <a href="#">Inicio</a>
         </li>
-    </ul>
+    </ul>-->
+    <style>
+        body {
+            min-height: 200vh;
+        }
+
+        .body {
+            background-color: #16181d;
+        }
+
+        .color-primary {
+            color: #087ea4;
+        }
+    </style>
 
     <script>
         console.log(document.getElementById('titleHomepage'));
@@ -27,6 +42,39 @@
         console.log(document.querySelector('#titleHomepage'));
         console.log(document.querySelectorAll('.list'));
 
+        /*evento para que aparezca finalizando en network en inspeccionar página*/
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('documentReady');
+        });
+
+        const title = document.getElementById('titleHomepage');
+        title.addEventListener('click', () => {
+            alert('Felicitaciones tu primer evento en elemento');
+        });
+
+        title.addEventListener('ddblclick', () => {
+            title.innerText = 'Felicitaciones <span> Karina Gaitán </span>'
+        });
+
+        title.addEventListener('click', () => {
+            title.innerHTML = 'Felicitaciones <span> Karina Gaitán </span>'
+        });
+
+
+        /*tiene que ser ambos para que el color rojo solo se considere cuando ponga el mouse sobre el texto*/
+        title.addEventListener('mouseover', () => {
+            title.style.color = '#087ea4';
+        });
+
+        /*title.addEventListener('mouseleave', () => {
+            title.style.color = 'inherit';
+        });*/
+
+        title.addEventListener('scroll', () => {
+            title.classList.add('color-primary');
+            document.body.classList.add('body');
+        });
     </script>
 </body>
+
 </html>
