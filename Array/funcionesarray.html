@@ -4,11 +4,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Funciones Array</title>
+    <title>Funciones Array y window</title>
 </head>
 
 <body>
+
+    <h1>Promedio feliz </h1>
+
+    <!--Para crear eventos es: <h1 onclick="alert('Me diste click')"> Promedio feliz </h1>-->
+
+    <img src="https://wallpaperaccess.com/full/82341.jpg" alt="Imagen de fondo de pantalla", width="800" height="500">
+    <img src="https://media.istockphoto.com/photos/mount-assiniboine-with-rocky-mountain-in-autumn-forest-at-provincial-picture-id1188948578?k=6&m=1188948578&s=170667a&w=0&h=5I7SaCs_H1ZiE9wU1EVr17ATGVAA9IAqVA9gs8yPNRU=", alt="Imagen de fondo de pantalla", width="800" height="500">
+    <img src="https://cdn.wallpapersafari.com/70/85/KDqRwW.jpg" alt="Imagen de fondo de pantalla", width="800" height="500">
+
     <script>
+
         const nameList = ['Karina', 38, true, 'Vanessa', 'Benjamín', 'Olivia'];
         /*cuantos elementos hay*/
         console.log(nameList.length);
@@ -84,6 +94,90 @@
         /*para ordenar al reves el array*/
         console.log(nameList.reverse());
         console.log(nameList);
+
+
+        const heroes = [
+            {
+                id: 1,
+                name: 'Battman',
+                owner: 'DC'
+            },
+            {
+                id: 2,
+                name: 'Spiderman' ,
+                owner: 'Mrvl'
+            },
+            {
+                id: 3,
+                name: 'Wolberine',
+                owner: 'DC'
+            },
+            {
+                id: 4,
+                name: 'Flash',
+                owner: 'DC'
+            },
+        ];
+
+        /*Imprimir solo por consola*/
+        heroes.forEach(element => console.log(element.name));
+
+        /*Map es tranforma el Array con nuevas indicaciones*/
+        console.log (heroes.map(element => `${element.owner}: ${element.name}`));
+
+        /*Si quiero sacar que elementos tienen DC*/
+        console.log (heroes.filter(element => element.owner ==='DC'));
+        /*console.log(heroes.filter(element => {
+            return element.owner === 'DC';
+        }))*/
+
+        /*función return es para determinar la cantidad de palabras completas que existe*/
+        /*es la suma de todos los id*/
+        const total = heroes.reduce(
+            (accumulator, currentValue) => accumulator + currentValue.id,
+            0
+        );
+        console.log(total);
+
+        /*Funciones window*/
+        window.alert('Hola Mundo');
+        window.console.log(window.confirm('¿Usted desea ser mi novio?'));
+        window.console.log(window.prompt('¿Que te gusta de mí?'));
+
+        window.setTimeout(() => {
+            console.log('¿Que fue mano?');
+        }, 1000);
+        console.log('¿Amigo bailas?');
+
+        window.setInterval(() => {
+            console.log('¿Ya llegamos?');
+        }, 100);
+
+        setTimeout(() => {
+            clearTimeout(timeoutId);
+        }, 2000);
+
+        setTimeout(() => {
+            clearInterval(intervalId);
+        }, 5000);
+
+        /*Controlador de eventos*/
+        /*window.addEventListener('click', () => {
+            alert('Me diste click');
+        })/*
+
+        /*window.onclick = () => { alert('Hola Mundo')};*/
+
+        /*para modificar el texto del h1 con eventos*/
+        /*windoe.addEventListener('click' , () => {
+            window.document.write('Me diste click');
+        });*/
+
+        /*no se lanza hasta que se termine de cargar la página*/
+        window.addEventListener('load', () => {
+            alert('Se cargó la página');
+        });
+
     </script>
 </body>
 
